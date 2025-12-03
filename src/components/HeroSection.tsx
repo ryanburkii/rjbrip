@@ -18,10 +18,10 @@ export function HeroSection({ openWindow }: HeroSectionProps) {
           <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
             Ryan Berke
           </h1>
-          <p className="text-lg text-slate-400">
+          <p className="text-lg" style={{ color: '#8BE9FD' }}>
             IT Professional and Aspiring Cloud Engineer
           </p>
-          <p className="text-sm text-slate-400 leading-relaxed">
+          <p className="text-sm leading-relaxed" style={{ color: '#F8F8F2' }}>
             I am a dedicated IT professional with a passion for technology and I am always looking to learn new things. Currently, my main focus is on cloud infrastructure and cloud security.
           </p>
 
@@ -56,7 +56,7 @@ export function HeroSection({ openWindow }: HeroSectionProps) {
         </div>
 
         <div className="lg:w-80 space-y-4">
-          <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-slate-900/60 p-5">
+          <div className="relative overflow-hidden rounded-2xl border border-white/5 p-5" style={{ backgroundColor: 'rgba(68, 71, 90, 0.4)' }}>
             <div className="relative h-64 overflow-hidden rounded-xl border border-white/5">
               <Image
                 src="/profile-photo.jpg"
@@ -67,7 +67,7 @@ export function HeroSection({ openWindow }: HeroSectionProps) {
               />
             </div>
           </div>
-          <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-slate-900/60 p-5 mt-25">
+          <div className="relative overflow-hidden rounded-2xl border border-white/5 p-5 mt-25" style={{ backgroundColor: 'rgba(68, 71, 90, 0.4)' }}>
             <div className="relative h-48 overflow-hidden rounded-xl border border-white/5">
               <Image
                 src="/about.JPG"

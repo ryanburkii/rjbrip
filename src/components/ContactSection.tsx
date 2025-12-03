@@ -51,7 +51,7 @@ export function ContactSection() {
   };
 
   return (
-    <div className="flex flex-col gap-8 text-sm text-slate-200 md:flex-row">
+    <div className="flex flex-col gap-8 text-sm md:flex-row" style={{ color: '#F8F8F2' }}>
       <form onSubmit={handleSubmit} className="flex-1 space-y-4">
         <div className="grid gap-4 md:grid-cols-2">
           {[
@@ -59,7 +59,7 @@ export function ContactSection() {
             { id: "email", label: "Email", type: "email", placeholder: "your.email@example.com" },
           ].map((field) => (
             <div key={field.id}>
-              <label className="text-xs font-medium text-slate-400" htmlFor={field.id}>
+              <label className="text-xs font-medium" style={{ color: '#6272A4' }} htmlFor={field.id}>
                 {field.label}
               </label>
               <input
@@ -70,13 +70,16 @@ export function ContactSection() {
                 value={formData[field.id as keyof typeof formData]}
                 onChange={handleChange}
                 placeholder={field.placeholder}
-                className="mt-2 w-full rounded-lg border border-white/10 bg-slate-900/60 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-purple-500/50 focus:outline-none transition-colors"
+                className="mt-2 w-full rounded-lg border border-white/10 px-4 py-2.5 text-sm text-white focus:outline-none transition-colors"
+                style={{ backgroundColor: 'rgba(68, 71, 90, 0.6)', borderColor: 'rgba(255, 255, 255, 0.1)' }}
+                onFocus={(e) => e.target.style.borderColor = 'rgba(189, 147, 249, 0.5)'}
+                onBlur={(e) => e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)'}
               />
             </div>
           ))}
         </div>
         <div>
-          <label className="text-xs font-medium text-slate-400" htmlFor="subject">
+          <label className="text-xs font-medium" style={{ color: '#6272A4' }} htmlFor="subject">
             Subject
           </label>
           <input
@@ -87,11 +90,14 @@ export function ContactSection() {
             value={formData.subject}
             onChange={handleChange}
             placeholder="What is this about?"
-            className="mt-2 w-full rounded-lg border border-white/10 bg-slate-900/60 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-purple-500/50 focus:outline-none transition-colors"
+            className="mt-2 w-full rounded-lg border px-4 py-2.5 text-sm text-white focus:outline-none transition-colors"
+            style={{ backgroundColor: 'rgba(68, 71, 90, 0.6)', borderColor: 'rgba(255, 255, 255, 0.1)' }}
+            onFocus={(e) => e.target.style.borderColor = 'rgba(189, 147, 249, 0.5)'}
+            onBlur={(e) => e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)'}
           />
         </div>
         <div>
-          <label className="text-xs font-medium text-slate-400" htmlFor="message">
+          <label className="text-xs font-medium" style={{ color: '#6272A4' }} htmlFor="message">
             Message
           </label>
           <textarea
@@ -102,7 +108,10 @@ export function ContactSection() {
             value={formData.message}
             onChange={handleChange}
             placeholder="Tell me about your project or just say hello!"
-            className="mt-2 w-full rounded-lg border border-white/10 bg-slate-900/60 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-purple-500/50 focus:outline-none transition-colors"
+            className="mt-2 w-full rounded-lg border px-4 py-2.5 text-sm text-white focus:outline-none transition-colors"
+            style={{ backgroundColor: 'rgba(68, 71, 90, 0.6)', borderColor: 'rgba(255, 255, 255, 0.1)' }}
+            onFocus={(e) => e.target.style.borderColor = 'rgba(189, 147, 249, 0.5)'}
+            onBlur={(e) => e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)'}
           />
         </div>
         <button
@@ -119,10 +128,10 @@ export function ContactSection() {
           <p className="text-sm text-rose-400">Failed to send message. Please try again.</p>
         )}
       </form>
-      <div className="flex-1 space-y-4 rounded-2xl border border-white/5 bg-slate-900/60 p-6 text-sm text-slate-200">
-        <p className="text-xs font-medium text-slate-500">Contact Information</p>
+      <div className="flex-1 space-y-4 rounded-2xl border border-white/5 p-6 text-sm" style={{ backgroundColor: 'rgba(68, 71, 90, 0.4)', color: '#F8F8F2' }}>
+        <p className="text-xs font-medium" style={{ color: '#6272A4' }}>Contact Information</p>
         <div className="flex items-center gap-3 rounded-xl border border-white/5 p-4">
-          <div className="rounded-lg bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-400">
+          <div className="rounded-lg px-3 py-1.5 text-xs font-medium" style={{ backgroundColor: 'rgba(68, 71, 90, 0.6)', color: '#6272A4' }}>
             Email
           </div>
           <a href="mailto:ryan@rjb.rip" className="text-sm font-medium text-white">
@@ -130,19 +139,20 @@ export function ContactSection() {
           </a>
         </div>
         <div className="flex items-center gap-3 rounded-xl border border-white/5 p-4">
-          <div className="rounded-lg bg-slate-900/60 px-3 py-1.5 text-xs font-medium text-slate-400">
+          <div className="rounded-lg px-3 py-1.5 text-xs font-medium" style={{ backgroundColor: 'rgba(68, 71, 90, 0.6)', color: '#6272A4' }}>
             Location
           </div>
           <p className="text-sm font-medium text-white">Tampa, FL</p>
         </div>
-        <div className="rounded-xl border border-white/5 bg-slate-900/60 p-4 text-sm text-slate-300">
-          <p className="text-xs font-medium text-slate-500 mb-3">Connect</p>
+        <div className="rounded-xl border border-white/5 p-4 text-sm" style={{ backgroundColor: 'rgba(68, 71, 90, 0.6)', color: '#F8F8F2' }}>
+          <p className="text-xs font-medium mb-3" style={{ color: '#6272A4' }}>Connect</p>
           <div className="flex gap-3">
             <a
               href="https://github.com/ryanburkii"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-center text-sm font-medium text-slate-300 transition-all hover:border-purple-500/30 hover:bg-purple-500/10 hover:text-purple-300"
+              className="flex-1 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-center text-sm font-medium transition-all hover:border-purple-500/30 hover:bg-purple-500/10 hover:text-purple-300"
+              style={{ color: '#F8F8F2' }}
             >
               GitHub
             </a>
@@ -150,7 +160,8 @@ export function ContactSection() {
               href="https://www.linkedin.com/in/ryan-berke-b093152a7/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-center text-sm font-medium text-slate-300 transition-all hover:border-purple-500/30 hover:bg-purple-500/10 hover:text-purple-300"
+              className="flex-1 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-center text-sm font-medium transition-all hover:border-purple-500/30 hover:bg-purple-500/10 hover:text-purple-300"
+              style={{ color: '#F8F8F2' }}
             >
               LinkedIn
             </a>

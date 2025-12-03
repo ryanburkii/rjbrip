@@ -22,7 +22,7 @@ export function SkillsSection() {
     <div className="grid gap-6 md:grid-cols-2">
       {Object.entries(skills).map(([category, skillList]) => (
         <div key={category} className="space-y-4 rounded-xl border border-white/5 bg-white/5 p-4">
-          <p className="text-xs font-medium text-slate-500">{category}</p>
+          <p className="text-xs font-medium" style={{ color: '#6272A4' }}>{category}</p>
           {skillList.map((skill) => (
             <div key={skill.name} className="space-y-2">
               <div className="flex items-center justify-between text-sm text-slate-300">
@@ -39,8 +39,8 @@ export function SkillsSection() {
           ))}
         </div>
       ))}
-      <div className="rounded-xl border border-white/5 bg-slate-900/50 p-4 text-sm text-slate-300">
-        <p className="text-xs font-medium text-slate-500">Currently Learning</p>
+      <div className="rounded-xl border border-white/5 p-4 text-sm" style={{ backgroundColor: 'rgba(68, 71, 90, 0.4)', color: '#F8F8F2' }}>
+        <p className="text-xs font-medium" style={{ color: '#6272A4' }}>Currently Learning</p>
         <p className="mt-2">AWS · Snowflake · Kubernetes · Git · Docker</p>
       </div>
     </div>

@@ -100,7 +100,7 @@ type MenuBarProps = {
 
 function MenuBar({ onMenuSelect, time }: MenuBarProps) {
   return (
-    <nav className="fixed inset-x-4 top-4 z-50 flex items-center justify-between rounded-xl border border-white/5 bg-slate-950/90 px-4 py-2 backdrop-blur-xl shadow-lg">
+    <nav className="fixed inset-x-4 top-4 z-50 flex items-center justify-between rounded-xl border border-white/5 px-4 py-2 backdrop-blur-xl shadow-lg" style={{ backgroundColor: 'rgba(40, 42, 54, 0.9)' }}>
       <div className="flex items-center gap-4 text-xs">
         <div className="relative w-6 h-6 flex-shrink-0">
           <Image
@@ -110,10 +110,10 @@ function MenuBar({ onMenuSelect, time }: MenuBarProps) {
             className="object-contain"
           />
         </div>
-        <span className="text-sm font-medium text-slate-300">Portfolio</span>
+        <span className="text-sm font-medium" style={{ color: '#F8F8F2' }}>Portfolio</span>
         {menuSections.map((section) => (
           <div key={section.label} className="flex items-center gap-2">
-            <span className="text-[0.55rem] tracking-[0.6em] text-slate-400" aria-label={section.label}>
+            <span className="text-[0.55rem] tracking-[0.6em]" style={{ color: '#6272A4' }} aria-label={section.label}>
               {section.label}
             </span>
             <div className="flex gap-2">
@@ -121,7 +121,8 @@ function MenuBar({ onMenuSelect, time }: MenuBarProps) {
                 <button
                   key={item.id}
                   onClick={() => onMenuSelect(item.id)}
-                  className="rounded-lg bg-white/5 hover:bg-purple-500/10 border border-white/5 hover:border-purple-500/20 px-3 py-1 text-[0.7rem] font-medium text-slate-400 hover:text-purple-300 transition-all"
+                  className="rounded-lg bg-white/5 hover:bg-purple-500/10 border border-white/5 hover:border-purple-500/20 px-3 py-1 text-[0.7rem] font-medium hover:text-purple-300 transition-all"
+                  style={{ color: '#F8F8F2' }}
                 >
                   {item.label}
                 </button>
@@ -130,7 +131,7 @@ function MenuBar({ onMenuSelect, time }: MenuBarProps) {
           </div>
         ))}
       </div>
-      <div className="flex items-center gap-3 text-[0.6rem] tracking-[0.4em] text-slate-400">
+      <div className="flex items-center gap-3 text-[0.6rem] tracking-[0.4em]" style={{ color: '#6272A4' }}>
         <span className="h-1.5 w-1.5 rounded-full bg-purple-400" />
         {time}
       </div>
@@ -262,7 +263,8 @@ function DesktopWindow({
           window.addEventListener('pointermove', handlePointerMove);
           window.addEventListener('pointerup', handlePointerUp);
         }}
-        className="absolute bottom-4 right-4 flex h-6 w-6 cursor-se-resize items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[0.65rem] text-slate-400 transition-all hover:border-purple-500/30 hover:bg-purple-500/10 hover:text-purple-300 z-10"
+        className="absolute bottom-4 right-4 flex h-6 w-6 cursor-se-resize items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[0.65rem] transition-all hover:border-purple-500/30 hover:bg-purple-500/10 hover:text-purple-300 z-10"
+        style={{ color: '#6272A4' }}
         aria-label="Resize window"
       >
         ⇲
@@ -351,12 +353,12 @@ export function DesktopLayout() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-950 text-white">
+    <div className="relative min-h-screen overflow-hidden text-white" style={{ backgroundColor: 'transparent' }}>
       <MenuBar onMenuSelect={openWindow} time={timeString} />
 
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-full">
-        <div className="absolute left-10 top-24 h-96 w-96 rounded-full bg-gradient-to-br from-purple-600/30 to-purple-800/20 blur-3xl" />
-        <div className="absolute right-10 bottom-10 h-96 w-96 rounded-full bg-gradient-to-br from-purple-500/20 to-slate-800/30 blur-3xl" />
+        <div className="absolute left-10 top-24 h-96 w-96 rounded-full opacity-50 blur-3xl" style={{ background: 'radial-gradient(circle, rgba(189, 147, 249, 0.3), rgba(189, 147, 249, 0.1))' }} />
+        <div className="absolute right-10 bottom-10 h-96 w-96 rounded-full opacity-50 blur-3xl" style={{ background: 'radial-gradient(circle, rgba(139, 233, 253, 0.2), rgba(68, 71, 90, 0.1))' }} />
       </div>
 
       <div className="relative z-10 block pt-20">

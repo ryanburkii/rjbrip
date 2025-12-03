@@ -40,7 +40,8 @@ export function ProjectsSection() {
         {projects.map((project) => (
           <div
             key={project.title}
-            className="flex flex-col rounded-2xl border border-white/5 bg-slate-900/60 transition-all hover:-translate-y-1"
+            className="flex flex-col rounded-2xl border border-white/5 transition-all hover:-translate-y-1"
+            style={{ backgroundColor: 'rgba(68, 71, 90, 0.4)' }}
           >
             <div className="relative h-48 w-full overflow-hidden rounded-t-2xl border-b border-white/5">
               <Image
@@ -53,7 +54,7 @@ export function ProjectsSection() {
             </div>
             <div className="flex flex-1 flex-col gap-3 p-5">
               <h3 className="text-lg font-semibold text-white">{project.title}</h3>
-              <p className="text-sm text-slate-400">{project.description}</p>
+              <p className="text-sm" style={{ color: '#F8F8F2' }}>{project.description}</p>
               <a
                 href={project.github}
                 target="_blank"

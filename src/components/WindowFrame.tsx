@@ -32,7 +32,8 @@ export function WindowFrame({
 
   return (
     <div
-      className={`relative overflow-hidden rounded-2xl border border-white/5 bg-slate-950/80 shadow-2xl backdrop-blur-xl ${className}`}
+      className={`relative overflow-hidden rounded-2xl border border-white/5 shadow-2xl backdrop-blur-xl ${className}`}
+      style={{ backgroundColor: 'rgba(40, 42, 54, 0.95)' }}
     >
       <div
         className="flex items-center justify-between border-b border-white/5 px-4 py-3 select-none cursor-move flex-shrink-0"
@@ -63,11 +64,11 @@ export function WindowFrame({
             </button>
           </div>
           <div>
-            <p className="text-xs font-medium text-slate-400">
+            <p className="text-xs font-medium" style={{ color: '#F8F8F2' }}>
               {title}
             </p>
             {subtitle && (
-              <p className="text-[0.65rem] text-slate-500">{subtitle}</p>
+              <p className="text-[0.65rem]" style={{ color: '#6272A4' }}>{subtitle}</p>
             )}
           </div>
         </div>

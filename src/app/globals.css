@@ -1,8 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #01040f;
-  --foreground: #f8fafc;
+  --background: #282A36;
+  --foreground: #F8F8F2;
+  --purple: #BD93F9;
+  --cyan: #8BE9FD;
+  --green: #50FA7B;
+  --pink: #FF79C6;
+  --red: #FF5555;
+  --orange: #FFB86C;
+  --yellow: #F1FA8C;
+  --selection: #44475A;
+  --comment: #6272A4;
+  --current-line: #44475A;
 }
 
 @theme inline {
@@ -17,12 +27,17 @@ html {
 }
 
 body {
-  background-color: #01040f;
+  background-color: #282A36;
   background-image:
-    radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.2), transparent 40%),
-    radial-gradient(circle at 80% 10%, rgba(16, 185, 129, 0.2), transparent 38%),
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 40px),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 40px);
+    url('/logo-nobg.png'),
+    radial-gradient(circle at 20% 20%, rgba(189, 147, 249, 0.15), transparent 40%),
+    radial-gradient(circle at 80% 10%, rgba(139, 233, 253, 0.15), transparent 38%),
+    repeating-linear-gradient(0deg, rgba(248, 248, 242, 0.03) 0px, rgba(248, 248, 242, 0.03) 1px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(90deg, rgba(248, 248, 242, 0.03) 0px, rgba(248, 248, 242, 0.03) 1px, transparent 1px, transparent 40px);
+  background-size: 150px, auto, auto, auto, auto;
+  background-position: center, 0 0, 0 0, 0 0, 0 0;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat, repeat;
+  background-attachment: scroll;
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
@@ -30,8 +45,8 @@ body {
 }
 
 ::selection {
-  background-color: rgba(59, 130, 246, 0.3);
-  color: #fff;
+  background-color: #44475A;
+  color: #F8F8F2;
 }
 
 ::-webkit-scrollbar {
@@ -39,14 +54,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.5);
+  background: rgba(68, 71, 90, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.5);
+  background: rgba(189, 147, 249, 0.6);
   border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(59, 130, 246, 0.8);
+  background: rgba(189, 147, 249, 0.9);
 }
